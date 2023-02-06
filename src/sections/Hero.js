@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="hero-section wrapper">
+    <section className="hero-section">
       <div className="hero-content">
         <h1 className="hero-title">Great coffee made simple.</h1>
         <p className="hero-text">

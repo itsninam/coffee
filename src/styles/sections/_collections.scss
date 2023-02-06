@@ -1,0 +1,36 @@
+.collections {
+  text-align: center;
+
+  .collections-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  img {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 15rem;
+    color: $quaternary;
+    opacity: 0.4;
+    letter-spacing: 8px;
+
+
+  }
+
+  h3 {
+    color: $secondary;
+    margin: 32px 0px 24px 0px;
+  }
+
+  .collections-coffee {
+    width: 20%;
+    position: relative;
+    top: -40px;
+  }
+
+}

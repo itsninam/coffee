@@ -19,8 +19,14 @@ p {
   padding: 0;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: $headerFont;
+
+}
+
+h1 {
   font-weight: $extraBoldWeight;
   font-size: 8.4rem;
 }
@@ -79,4 +85,8 @@ li a {
     color: $accent;
     border: 2px solid $accent;
   }
+}
+
+section {
+  margin-bottom: 20vh;
 }
