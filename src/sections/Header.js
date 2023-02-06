@@ -2,7 +2,7 @@ import logo from "../assets/shared/desktop/logo.svg";
 
 const Header = () => {
   return (
-    <header className="header wrapper">
+    <div className="header wrapper">
       <img src={logo} alt="coffee roasters logo" />
       <nav>
         <ul>
@@ -17,7 +17,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-    </header>
+    </div>
   );
 };
 

@@ -1,0 +1,22 @@
+.hero-section {
+  background-image: url("../../assets/home/desktop/image-hero-coffeepress.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 80vh;
+  border-radius: 8px;
+  padding: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $tertiary;
+
+  .hero-content {
+    width: 600px;
+
+    .hero-text {
+      margin: 46px 0px;
+      width: 80%;
+    }
+  }
+}

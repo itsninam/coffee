@@ -1,10 +1,16 @@
 import "./App.scss";
 import Header from "./sections/Header";
+import Hero from "./sections/Hero";
 
 const App = () => {
   return (
     <>
-      <Header />
+      <header>
+        <Header />
+      </header>
+      <main>
+        <Hero />
+      </main>
     </>
   );
 };
