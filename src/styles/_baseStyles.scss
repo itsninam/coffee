@@ -5,6 +5,7 @@ html {
 body {
   font-size: 1.8rem;
   font-family: $bodyFont;
+  background-color: $backgroundColour;
 }
 
 h1,
@@ -33,4 +34,24 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $quaternary;
+  font-weight: $boldWeight;
+  transition: 0.5s;
+
+  &:hover {
+    color: $secondary;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: $accent;
+    text-decoration-thickness: 2px;
+  }
 }

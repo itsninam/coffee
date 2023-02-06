@@ -1,7 +1,12 @@
 import "./App.scss";
+import Header from "./sections/Header";
 
-function App() {
-  return <h1>Coffee Roasters</h1>;
-}
+const App = () => {
+  return (
+    <>
+      <Header />
+    </>
+  );
+};
 
 export default App;
