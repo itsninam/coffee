@@ -32,6 +32,7 @@ const App = () => {
                   coffees={coffees}
                   title={home.title}
                   description={home.description}
+                  button={home.button}
                 />
               }
             />

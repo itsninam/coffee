@@ -1,4 +1,4 @@
-const Hero = ({ description, isAbout, isPlan, isHome, title }) => {
+const Hero = ({ description, isAbout, isPlan, isHome, title, button }) => {
   return (
     <section
       className={
@@ -12,7 +12,7 @@ const Hero = ({ description, isAbout, isPlan, isHome, title }) => {
         <p className="hero-text">{description}</p>
         {!isAbout && !isPlan && (
           <a href="#plan" className="button">
-            Create your plan
+            {button}
           </a>
         )}
       </div>
