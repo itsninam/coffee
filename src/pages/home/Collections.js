@@ -7,7 +7,7 @@ const Collections = ({ coffees }) => {
           return (
             <div className="collections-coffee" key={index}>
               <img
-                src={require(`../assets/home/desktop/${coffee.image}`)}
+                src={require(`../../assets/home/desktop/${coffee.image}`)}
                 alt={coffee.title}
               />
               <h3>{coffee.title}</h3>

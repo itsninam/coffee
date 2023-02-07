@@ -1,4 +1,5 @@
 import logo from "../assets/shared/desktop/logo.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,13 +9,13 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="about">About us</a>
+              <Link to="/about">About us</Link>
             </li>
             <li>
-              <a href="plan">Create your plan</a>
+              <Link to="/plan">Create your plan</Link>
             </li>
           </ul>
         </nav>

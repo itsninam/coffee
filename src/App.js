@@ -4,11 +4,13 @@ import "./App.scss";
 import { useState } from "react";
 
 //components
-import Collections from "./sections/Collections";
-import Header from "./sections/Header";
-import Hero from "./sections/Hero";
 import data from "./collectionsData";
-import Footer from "./sections/Footer";
+import Header from "./pages/Header";
+import Footer from "./pages/Footer";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import CreatePlan from "./pages/createPlan/CreatePlan";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [coffees, setCoffees] = useState(data);
@@ -20,8 +22,11 @@ const App = () => {
       </header>
       <main>
         <div className="wrapper">
-          <Hero />
-          <Collections coffees={coffees} />
+          <Routes>
+            <Route path="/" element={<Home coffees={coffees} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/plan" element={<CreatePlan />} />
+          </Routes>
         </div>
       </main>
       <footer>

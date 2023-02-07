@@ -24,10 +24,13 @@
 }
 
 .footer {
-  // background-color: $secondary;
   background-image: url('../../assets/about/tablet/bg-quality.png');
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
 
   a {
     color: $tertiary;
