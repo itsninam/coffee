@@ -8,6 +8,7 @@ import Collections from "./sections/Collections";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import data from "./collectionsData";
+import Footer from "./sections/Footer";
 
 const App = () => {
   const [coffees, setCoffees] = useState(data);
@@ -23,6 +24,9 @@ const App = () => {
           <Collections coffees={coffees} />
         </div>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

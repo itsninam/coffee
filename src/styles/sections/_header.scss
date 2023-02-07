@@ -1,9 +1,14 @@
-.header {
-  height: 80px;
-  padding: 16px 0 16px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header,
+.footer {
+
+  .wrapper {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0 16px 0;
+  }
+
 
   img {
     height: 25px;
@@ -16,4 +21,44 @@
       margin-left: 32px;
     }
   }
+}
+
+.footer {
+  // background-color: $secondary;
+  background-image: url('../../assets/about/tablet/bg-quality.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  a {
+    color: $tertiary;
+  }
+
+
+
+  .wrapper {
+    .img-container {
+      flex: 1;
+    }
+
+    nav {
+      flex: 1;
+    }
+
+    .socials {
+      ul {
+        justify-content: flex-end;
+      }
+    }
+
+    .nav-links {
+      ul {
+        justify-content: space-between;
+
+        li {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
 }
