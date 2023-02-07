@@ -1,4 +1,4 @@
-.hero-section {
+.hero-section-main {
   background-image: url("../../assets/home/desktop/image-hero-coffeepress.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,4 +19,18 @@
       width: 80%;
     }
   }
+
+
+}
+
+.hero-section-about {
+  background-image: url("../../assets/about/desktop/image-hero-whitecup.jpg");
+  background-position: top left;
+  height: 56vh;
+}
+
+.hero-section-plan {
+  background-image: url("../../assets/plan/desktop/image-hero-blackcup.jpg");
+  background-position: top left;
+  height: 56vh;
 }

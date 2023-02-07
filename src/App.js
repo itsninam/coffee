@@ -5,6 +5,7 @@ import { useState } from "react";
 
 //components
 import data from "./collectionsData";
+import banner from "./bannerInfo";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import Home from "./pages/home/Home";
@@ -14,6 +15,7 @@ import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [coffees, setCoffees] = useState(data);
+  const { home, about, plan } = banner;
 
   return (
     <>
@@ -23,9 +25,29 @@ const App = () => {
       <main>
         <div className="wrapper">
           <Routes>
-            <Route path="/" element={<Home coffees={coffees} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/plan" element={<CreatePlan />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  coffees={coffees}
+                  title={home.title}
+                  description={home.description}
+                />
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <About title={about.title} description={about.description} />
+              }
+            />
+            <Route
+              path="/plan"
+              element={
+                <CreatePlan title={plan.title} description={plan.description} />
+              }
+            />
+            //TODO - create error page component
           </Routes>
         </div>
       </main>

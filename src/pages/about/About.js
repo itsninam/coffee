@@ -1,5 +1,13 @@
-const About = () => {
-  return <h2>About Page</h2>;
+import Hero from "../home/Hero";
+
+const About = ({ title, description }) => {
+  const isAbout = true;
+
+  return (
+    <>
+      <Hero title={title} description={description} isAbout={isAbout} />
+    </>
+  );
 };
 
 export default About;

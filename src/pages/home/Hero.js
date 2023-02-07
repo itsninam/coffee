@@ -1,16 +1,20 @@
-const Hero = () => {
+const Hero = ({ description, isAbout, isPlan, isHome, title }) => {
   return (
-    <section className="hero-section">
+    <section
+      className={
+        (isAbout && "hero-section-main hero-section-about") ||
+        (isPlan && "hero-section-main hero-section-plan") ||
+        (isHome && "hero-section-main")
+      }
+    >
       <div className="hero-content">
-        <h1 className="hero-title">Great coffee made simple.</h1>
-        <p className="hero-text">
-          Start your mornings with the world’s best coffees. Try our expertly
-          curated artisan coffees from our best roasters delivered directly to
-          your door, at your schedule.
-        </p>
-        <a href="#plan" className="button">
-          Create your plan
-        </a>
+        <h1 className="hero-title">{title}</h1>
+        <p className="hero-text">{description}</p>
+        {!isAbout && !isPlan && (
+          <a href="#plan" className="button">
+            Create your plan
+          </a>
+        )}
       </div>
     </section>
   );
