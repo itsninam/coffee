@@ -1,4 +1,5 @@
 import Hero from "../home/Hero";
+import Preferences from "./Preferences";
 
 const CreatePlan = ({ title, description }) => {
   const isPlan = true;
@@ -6,6 +7,7 @@ const CreatePlan = ({ title, description }) => {
   return (
     <>
       <Hero title={title} description={description} isPlan={isPlan} />
+      <Preferences />
     </>
   );
 };
