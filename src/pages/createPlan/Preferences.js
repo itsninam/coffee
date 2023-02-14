@@ -24,6 +24,7 @@ const Preferences = () => {
               setAmount={setAmount}
               setGrind={setGrind}
               setDelivery={setDelivery}
+              coffee={coffee}
             />
           );
         })}

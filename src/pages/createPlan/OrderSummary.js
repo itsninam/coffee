@@ -3,7 +3,7 @@ const OrderSummary = ({ coffee, type, amount, grind, delivery }) => {
     <section className="order-summary">
       <h4>Order summary</h4>
       <p className="summary">
-        “I drink my coffee as{" "}
+        “I drink my coffee {coffee === "capsule" ? "using " : "as "}
         {coffee ? (
           <span className="user-choice">{coffee}</span>
         ) : (
@@ -21,12 +21,16 @@ const OrderSummary = ({ coffee, type, amount, grind, delivery }) => {
         ) : (
           <span className="underline">&nbsp;</span>
         )}{" "}
-        ground ala{" "}
-        {grind ? (
-          <span className="user-choice">{grind}</span>
-        ) : (
-          <span className="underline">&nbsp;</span>
-        )}{" "}
+        {coffee === "capsule" ? null : (
+          <span>
+            ground ala{" "}
+            {grind ? (
+              <span className="user-choice">{grind}</span>
+            ) : (
+              <span className="underline">&nbsp;</span>
+            )}{" "}
+          </span>
+        )}
         sent to me{" "}
         {delivery ? (
           <span className="user-choice">{delivery}</span>

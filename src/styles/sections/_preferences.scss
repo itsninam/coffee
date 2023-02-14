@@ -16,6 +16,11 @@
     img {
       margin-bottom: 48px;
     }
+
+    .disabled {
+      pointer-events: none;
+      opacity: 0.4;
+    }
   }
 
   .question-container {
@@ -24,17 +29,34 @@
     align-items: center;
   }
 
-
-
   .answer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 48px;
 
-    .option {
-      width: 250px;
+    .option-card {
+      // border: 1px solid $lightColour;
       background-color: $lightColour;
+      transition: 0.5s;
+      box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+
+      &:hover {
+        background-color: $accent;
+        color: #fff;
+      }
+
+      &:hover label,
+      &:hover p {
+        color: #fff;
+      }
+
+
+    }
+
+    .option-card,
+    .active-card {
+      width: 250px;
       padding: 16px;
       border-radius: 8px;
       height: 200px;
@@ -44,33 +66,40 @@
       cursor: pointer;
     }
 
-    label {
-      font-weight: $extraBoldWeight;
-      font-size: 2.5rem;
-      font-family: $headerFont;
+    .active-card {
+      background-color: $accent;
+      // opacity: 0.4;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+      border-color: #dedede;
+    }
+
+    .other-card {
+      background-color: $accent;
+      opacity: 0.4;
+    }
+
+    .label-text,
+    .description-text {
       color: $primary;
+      transition: 0.5s;
       cursor: pointer;
     }
 
-    p {
-      color: $primary;
+    .label-text,
+    .label-active {
+      font-weight: $extraBoldWeight;
+      font-size: 2.5rem;
+      font-family: $headerFont;
     }
+
+    .label-active,
+    .description-active {
+      color: #fff;
+    }
+
 
     input {
       display: none;
     }
   }
-}
-
-.active {
-  border: 1px solid red;
-  width: 250px;
-  background-color: $lightColour;
-  padding: 16px;
-  border-radius: 8px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  cursor: pointer;
 }
