@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { isRouteErrorResponse } from "react-router-dom";
 import arrow from "../../assets/plan/desktop/icon-arrow.svg";
 
 const Question = ({
   plan,
+  plans,
   setCoffee,
   setType,
   setAmount,
   setGrind,
   setDelivery,
   coffee,
+  amount,
 }) => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [activeCard, setActiveCard] = useState();
@@ -36,6 +37,8 @@ const Question = ({
           case 4:
             setDelivery(userChoice);
             break;
+          default:
+          //Do nothing
         }
       }
     });
@@ -52,6 +55,28 @@ const Question = ({
       question[3].classList.remove("disabled");
     }
   }, [coffee]);
+
+  const handlePricing = (price) => {
+    const options = plans[4].options;
+    const result = options.map((option, index) => ({
+      ...option,
+      description: `$${price[index].toFixed(
+        2
+      )} per shipment. Includes free priority shipping`,
+    }));
+    plans[4].options = result;
+  };
+
+  if (amount === "250g") {
+    const prices = [7.2, 9.6, 12.0];
+    handlePricing(prices);
+  } else if (amount === "500g") {
+    const prices = [13.0, 17.5, 22.0];
+    handlePricing(prices);
+  } else {
+    const prices = [22.0, 32.0, 42.0];
+    handlePricing(prices);
+  }
 
   return (
     <div className="question">

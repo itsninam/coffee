@@ -100,17 +100,14 @@ const createPlan = [
       {
         id: 17,
         option: "Every week",
-        description: "$14.00 per shipment. Includes free first-class shipping.",
       },
       {
         id: 18,
         option: "Every 2 weeks",
-        description: "$17.25 per shipment. Includes free priority shipping.",
       },
       {
         id: 19,
         option: "Every month",
-        description: "$22.50 per shipment. Includes free priority shipping.",
       },
     ],
   },
