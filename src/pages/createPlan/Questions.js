@@ -11,12 +11,14 @@ const Question = ({
   setDelivery,
   coffee,
   amount,
+  delivery,
+  setTotal,
 }) => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [activeCard, setActiveCard] = useState();
   const [hideAnswer, setHideAnswer] = useState(true);
 
-  function handleOptionClick(selectedOption, selectedCard) {
+  const handleOptionClick = (selectedOption, selectedCard) => {
     let userChoice = selectedOption.toLowerCase();
 
     plan.options.forEach((option) => {
@@ -43,7 +45,7 @@ const Question = ({
       }
     });
     setActiveCard(selectedCard);
-  }
+  };
 
   useEffect(() => {
     let question = document.querySelectorAll(".question-container");
@@ -67,16 +69,40 @@ const Question = ({
     plans[4].options = result;
   };
 
-  if (amount === "250g") {
-    const prices = [7.2, 9.6, 12.0];
-    handlePricing(prices);
-  } else if (amount === "500g") {
-    const prices = [13.0, 17.5, 22.0];
-    handlePricing(prices);
-  } else {
-    const prices = [22.0, 32.0, 42.0];
-    handlePricing(prices);
-  }
+  //TODO - refactor
+  useEffect(() => {
+    if (amount === "250g") {
+      const prices = [7.2, 9.6, 12.0];
+      handlePricing(prices);
+      if (delivery === "every week") {
+        setTotal((prices[0] * 4).toFixed(2));
+      } else if (delivery === "every 2 weeks") {
+        setTotal((prices[1] * 4).toFixed(2));
+      } else if (delivery === "every month") {
+        setTotal((prices[2] * 4).toFixed(2));
+      }
+    } else if (amount === "500g") {
+      const prices = [13.0, 17.5, 22.0];
+      handlePricing(prices);
+      if (delivery === "every week") {
+        setTotal((prices[0] * 2).toFixed(2));
+      } else if (delivery === "every 2 weeks") {
+        setTotal((prices[1] * 2).toFixed(2));
+      } else if (delivery === "every month") {
+        setTotal((prices[2] * 2).toFixed(2));
+      }
+    } else if (amount === "1000g") {
+      const prices = [22.0, 32.0, 42.0];
+      handlePricing(prices);
+      if (delivery === "every week") {
+        setTotal((prices[0] * 1).toFixed(2));
+      } else if (delivery === "every 2 weeks") {
+        setTotal((prices[1] * 1).toFixed(2));
+      } else if (delivery === "every month") {
+        setTotal((prices[2] * 1).toFixed(2));
+      }
+    }
+  }, [amount, delivery, setTotal]);
 
   return (
     <div className="question">

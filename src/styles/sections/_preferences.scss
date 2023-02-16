@@ -1,5 +1,4 @@
 .create-plan {
-
   .questions-container {
     width: 800px;
     margin-right: 100px;
@@ -104,13 +103,5 @@
   button {
     display: block;
     margin-left: auto;
-  }
-
-  button.active {
-    background-color: $accent;
-  }
-
-  button.disabled {
-    background-color: grey;
   }
 }

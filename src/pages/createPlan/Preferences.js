@@ -14,6 +14,8 @@ const Preferences = () => {
   const [delivery, setDelivery] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [activeBtn, setActiveBtn] = useState(false);
+  const [total, setTotal] = useState();
+
   const isOrderSummary = true;
 
   useEffect(() => {
@@ -28,6 +30,8 @@ const Preferences = () => {
     if (coffee && type && amount && delivery) {
       setShowModal(true);
     }
+
+    // document.body.style.overflow = "hidden";
   };
 
   return (
@@ -47,6 +51,7 @@ const Preferences = () => {
               coffee={coffee}
               amount={amount}
               delivery={delivery}
+              setTotal={setTotal}
             />
           );
         })}
@@ -60,15 +65,16 @@ const Preferences = () => {
           delivery={delivery}
           isOrderSummary={isOrderSummary}
         />
-        {}
-        {isOrderSummary && (
-          <button
-            onClick={handleShowModal}
-            className={activeBtn ? "active" : "disabled"}
-          >
-            order
-          </button>
-        )}
+        <div className="questions-container">
+          {isOrderSummary && (
+            <button
+              onClick={handleShowModal}
+              className={activeBtn ? "button" : "disabled"}
+            >
+              Create your plan
+            </button>
+          )}
+        </div>
       </>
       {showModal && (
         <OrderSummaryModal
@@ -77,6 +83,10 @@ const Preferences = () => {
           amount={amount}
           grind={grind}
           delivery={delivery}
+          plans={plans}
+          total={total}
+          showModal={showModal}
+          setShowModal={setShowModal}
         />
       )}
     </section>

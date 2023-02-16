@@ -75,15 +75,21 @@ li a {
   }
 }
 
-.button {
-  color: $tertiary;
+button {
   padding: 14px 24px;
-  background-color: $accent;
   border-radius: 8px;
   font-weight: $boldWeight;
   transition: 0.5;
   display: inline-block;
+  border: none;
+
+}
+
+button.button {
+  color: $tertiary;
+  background-color: $accent;
   border: 2px solid $accent;
+  cursor: pointer;
 
   &:hover {
     background-color: #edf6f9;
@@ -92,6 +98,12 @@ li a {
   }
 }
 
+button.disabled {
+  background-color: $secondary;
+  opacity: 0.2;
+  color: #fff;
+}
+
 section {
-  margin-bottom: 20vh;
+  margin-bottom: 12vh;
 }
