@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Hero = ({ description, isAbout, isPlan, isHome, title, button }) => {
   return (
     <section
@@ -11,9 +13,9 @@ const Hero = ({ description, isAbout, isPlan, isHome, title, button }) => {
         <h1 className="hero-title">{title}</h1>
         <p className="hero-text">{description}</p>
         {!isAbout && !isPlan && (
-          <a href="#plan" className="button">
+          <Link to="/plan" className="button">
             {button}
-          </a>
+          </Link>
         )}
       </div>
     </section>

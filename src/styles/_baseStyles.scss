@@ -75,7 +75,8 @@ li a {
   }
 }
 
-button {
+button,
+a.button {
   padding: 14px 24px;
   border-radius: 8px;
   font-weight: $boldWeight;
@@ -85,7 +86,8 @@ button {
 
 }
 
-button.button {
+button.button,
+a.button {
   color: $tertiary;
   background-color: $accent;
   border: 2px solid $accent;
