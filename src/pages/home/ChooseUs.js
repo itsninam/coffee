@@ -13,32 +13,32 @@ const ChooseUs = () => {
           growers to give you a more impactful experience on every level.
         </p>
       </div>
-      <div className="benefits-cards-container">
-        <div className="card">
+      <ul className="benefits-cards-container">
+        <li className="card">
           <img src={coffeeBean} alt="coffee bean icon" />
           <h4>Best quality</h4>
           <p>
             Discover an endless variety of the world’s best artisan coffee from
             each of our roasters.
           </p>
-        </div>
-        <div className="card">
+        </li>
+        <li className="card">
           <img src={gift} alt="gift icon" />
           <h4>Exclusive benefits</h4>
           <p>
             Special offers and swag when you subscribe, including 30% off your
             first shipment.
           </p>
-        </div>
-        <div className="card">
+        </li>
+        <li className="card">
           <img src={truck} alt="truck icon" />
           <h4>Free shipping</h4>
           <p>
             We cover the cost and coffee is delivered fast. Peak freshness:
             guaranteed.
           </p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
   );
 };

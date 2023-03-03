@@ -1,0 +1,58 @@
+.how-it-works {
+
+  h2 {
+    color: $quaternary;
+  }
+
+  .image-container {
+    width: 85%;
+    margin: 32px auto 0px auto;
+
+    .circle {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid $accent;
+    }
+
+    .line::after {
+      content: '';
+      display: inline-block;
+      width: 32%;
+      margin-bottom: 15px;
+      border: 1px solid $peachColour;
+    }
+
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto 64px auto;
+
+    .content {
+      width: 330px;
+
+      .number {
+        font-family: $headerFont;
+        font-weight: $extraBoldWeight;
+        font-size: 8rem;
+        margin-top: 16px;
+        color: $peachColour;
+      }
+    }
+
+    h4 {
+      color: $darkBackgroundColour;
+      margin: 32px 0px 16px 0px
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}

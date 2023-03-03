@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import Collections from "./Collections";
 import ChooseUs from "./ChooseUs";
+import HowItWorks from "./HowItWorks";
 
 const Home = ({ coffees, title, description, button }) => {
   const isHome = true;
@@ -15,6 +16,7 @@ const Home = ({ coffees, title, description, button }) => {
       />
       <Collections coffees={coffees} />
       <ChooseUs />
+      <HowItWorks />
     </>
   );
 };
