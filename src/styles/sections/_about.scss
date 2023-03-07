@@ -1,0 +1,70 @@
+.commitment,
+.quality {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    margin-right: 32px;
+    border-radius: 8px;
+  }
+
+  .content-container {
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      color: $secondary;
+      margin-bottom: 32px;
+    }
+
+    p {
+      font-size: 1.7rem;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+.quality {
+  background-color: $secondary;
+  border-radius: 8px;
+  color: #fff;
+  margin: 100px auto 100px auto;
+
+  .content-container {
+    h2 {
+      color: #fff;
+    }
+  }
+
+  img {
+    position: relative;
+    bottom: 100px;
+  }
+}
+
+.headquarters {
+  width: 90%;
+  margin: 0 auto 80px auto;
+
+  h2 {
+    margin-bottom: 32px;
+    color: $secondary;
+  }
+
+  .list-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    h3 {
+      color: $secondary;
+      font-weight: $extraBoldWeight;
+      margin: 32px 0;
+      font-style: italic;
+    }
+
+  }
+}

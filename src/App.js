@@ -12,6 +12,7 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import CreatePlan from "./pages/createPlan/CreatePlan";
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./pages/home/ScrollToTop";
 
 const App = () => {
   const [coffees, setCoffees] = useState(data);
@@ -24,6 +25,7 @@ const App = () => {
       </header>
       <main>
         <div className="wrapper">
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"
