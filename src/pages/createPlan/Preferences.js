@@ -3,6 +3,7 @@ import data from "../../createPlan";
 import OrderSummary from "./OrderSummary";
 import Question from "./Questions";
 import OrderSummaryModal from "./OrderSummaryModal";
+import QuestionsSummary from "./QuestionsSummary";
 
 const Preferences = () => {
   // eslint-disable-next-line
@@ -15,9 +16,12 @@ const Preferences = () => {
   const [showModal, setShowModal] = useState(false);
   const [activeBtn, setActiveBtn] = useState(false);
   const [total, setTotal] = useState();
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [activeSelection, setActiveSelection] = useState();
 
   const isOrderSummary = true;
 
+  //display active button once user selects desired options
   useEffect(() => {
     if (coffee === "capsule" && type && amount && delivery) {
       setActiveBtn(true);
@@ -26,35 +30,54 @@ const Preferences = () => {
     }
   }, [amount, coffee, delivery, grind, type]);
 
+  //only show modal window if user selects all options
   const handleShowModal = () => {
     if (coffee && type && amount && delivery) {
       setShowModal(true);
     }
+  };
 
-    // document.body.style.overflow = "hidden";
+  //display options when user selects preference
+  const handleShowAnswer = (index) => {
+    setShowAnswer(index);
+
+    const selectedEl = document.querySelector(`.question--${index}`);
+    selectedEl.scrollIntoView({ top: 0, behaviour: "smooth" });
+
+    //add accent colour on selection click
+    setActiveSelection(index);
   };
 
   return (
     <section className="create-plan">
-      <div className="questions-container">
-        {plans.map((plan) => {
-          return (
-            <Question
-              plan={plan}
-              plans={plans}
-              key={plan.id}
-              setCoffee={setCoffee}
-              setType={setType}
-              setAmount={setAmount}
-              setGrind={setGrind}
-              setDelivery={setDelivery}
-              coffee={coffee}
-              amount={amount}
-              delivery={delivery}
-              setTotal={setTotal}
-            />
-          );
-        })}
+      <div className="flex-container">
+        <QuestionsSummary
+          plans={plans}
+          handleShowAnswer={handleShowAnswer}
+          activeSelection={activeSelection}
+        />
+        <div className="questions-container">
+          {plans.map((plan) => {
+            return (
+              <Question
+                plan={plan}
+                plans={plans}
+                key={plan.id}
+                setCoffee={setCoffee}
+                setType={setType}
+                setAmount={setAmount}
+                setGrind={setGrind}
+                setDelivery={setDelivery}
+                coffee={coffee}
+                amount={amount}
+                delivery={delivery}
+                setTotal={setTotal}
+                showAnswer={showAnswer}
+                handleShowAnswer={handleShowAnswer}
+              />
+            );
+          })}
+        </div>
       </div>
       <>
         <OrderSummary
@@ -65,7 +88,7 @@ const Preferences = () => {
           delivery={delivery}
           isOrderSummary={isOrderSummary}
         />
-        <div className="questions-container">
+        <div className="summary-container">
           {isOrderSummary && (
             <button
               onClick={handleShowModal}

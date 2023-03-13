@@ -2,6 +2,7 @@ const createPlan = [
   {
     id: 0,
     question: "How do you drink your coffee?",
+    category: "01 Preferences",
     options: [
       {
         id: 5,
@@ -25,6 +26,7 @@ const createPlan = [
   {
     id: 1,
     question: "What type of coffee?",
+    category: "02 Bean Type",
     options: [
       {
         id: 8,
@@ -49,6 +51,7 @@ const createPlan = [
   {
     id: 2,
     question: "How much would you like?",
+    category: "03 Quantity",
     options: [
       {
         id: 11,
@@ -73,6 +76,7 @@ const createPlan = [
   {
     id: 3,
     question: "Want us to grind them?",
+    category: "04 Grind Option",
     options: [
       {
         id: 14,
@@ -96,18 +100,23 @@ const createPlan = [
   {
     id: 4,
     question: "How often should we deliver?",
+    category: "05 Deliveries",
     options: [
       {
         id: 17,
         option: "Every week",
+        description:
+          "$14.00 per shipment. Includes free first-className shipping.",
       },
       {
         id: 18,
         option: "Every 2 weeks",
+        description: "$17.25 per shipment. Includes free priority shipping.",
       },
       {
         id: 19,
         option: "Every month",
+        description: "$22.50 per shipment. Includes free priority shipping.",
       },
     ],
   },

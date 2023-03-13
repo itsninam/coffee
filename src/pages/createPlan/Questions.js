@@ -13,11 +13,13 @@ const Question = ({
   amount,
   delivery,
   setTotal,
+  showAnswer,
+  handleShowAnswer,
 }) => {
-  const [showAnswer, setShowAnswer] = useState(false);
   const [activeCard, setActiveCard] = useState();
   const [hideAnswer, setHideAnswer] = useState(true);
 
+  //capture user choice on card selection
   const handleOptionClick = (selectedOption, selectedCard) => {
     let userChoice = selectedOption.toLowerCase();
 
@@ -47,6 +49,7 @@ const Question = ({
     setActiveCard(selectedCard);
   };
 
+  //if user selects 'capsule', disable fourth question
   useEffect(() => {
     let question = document.querySelectorAll(".question-container");
     if (coffee === "capsule") {
@@ -70,6 +73,7 @@ const Question = ({
   };
 
   //TODO - refactor
+  //set pricing based on user weight selection
   useEffect(() => {
     if (amount === "250g") {
       const prices = [7.2, 9.6, 12.0];
@@ -105,17 +109,17 @@ const Question = ({
   }, [amount, delivery, setTotal]);
 
   return (
-    <div className="question">
+    <div className={`question--${plan.id}`}>
       <div
         className="question-container"
-        onClick={() => setShowAnswer(!showAnswer)}
+        onClick={() => handleShowAnswer(plan.id)}
       >
         <h3>{plan.question}</h3>
         <img src={arrow} alt="open and close arrow" />
       </div>
       {plan.id === 3 && hideAnswer
         ? null
-        : showAnswer && (
+        : showAnswer === plan.id && (
             <div className="answer-container">
               {plan.options.map((option) => {
                 return (

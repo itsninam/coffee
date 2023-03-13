@@ -1,0 +1,36 @@
+.questions-summary {
+  width: fit-content;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+
+
+  li {
+    cursor: pointer;
+    display: block;
+    font-size: 3rem;
+    font-family: $headerFont;
+    font-weight: $extraBoldWeight;
+    color: $quaternary;
+    padding: 32px 0 32px 0;
+    border-bottom: 1px solid $quaternary;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:hover,
+    &:active {
+      color: $accent;
+    }
+  }
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+li.active {
+  color: $accent;
+}
